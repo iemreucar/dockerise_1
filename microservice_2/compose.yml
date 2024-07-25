@@ -1,0 +1,30 @@
+version: '3'
+services:
+  service1:
+    build: ./service1
+    ports:
+      - "5001:5000"
+    networks:
+      custom_network:
+        ipv4_address: 172.17.0.10
+  service2:
+    build: ./service2
+    ports:
+      - "5002:5000"
+    networks:
+      custom_network:
+        ipv4_address: 172.17.0.11
+  service3:
+    build: ./service3
+    ports:
+      - "5003:5000"
+    networks:
+      custom_network:
+        ipv4_address: 172.17.0.12
+
+networks:
+  custom_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.17.0.0/24

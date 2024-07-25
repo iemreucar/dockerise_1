@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service 3</title>
+    <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+</head>
+<body>
+    <h1>Service 3 Frontend</h1>
+    <button hx-get="/service1" hx-target="#response" hx-swap="innerHTML">Get Data from Service 1</button>
+    <button hx-get="/service2" hx-target="#response" hx-swap="innerHTML">Get Data from Service 2</button>
+    <p id="response"></p>
+</body>
+</html>
